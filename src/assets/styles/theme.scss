@@ -1,0 +1,43 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$ac-primary: mat.define-palette(mat.$yellow-palette, 500);
+$ac-accent: mat.define-palette(mat.$indigo-palette, A200, A100, A400);
+$ac-warn: mat.define-palette(mat.$red-palette);
+
+$ac-theme: mat.define-light-theme((
+    color: (
+        primary: $ac-primary,
+        accent: $ac-accent,
+        warn: $ac-warn,
+    ),
+    density: 0,
+));
+
+// Emit theme-dependent styles for common features used across multiple components.
+@include mat.core-theme($ac-theme);
+
+// Emit styles for MatButton based on `$ac-theme`. Because the configuration
+// passed to `define-light-theme` omits typography, `button-theme` will not
+// emit any typography styles.
+@include mat.button-theme($ac-theme);
+@include mat.input-theme($ac-theme);
+
+:root {
+    --ac-primary: var(--ac-yellow-100);
+    --ac-primary-effects: var(--ac-yellow-200);
+    --ac-primary-text: var(--ac-grey-200);
+    --ac-seconday: var(--ac-grey-100);
+    --ac-tertiary: var(--ac-blue-100);
+
+    --ac-yellow-100: #F1C40F;
+    --ac-yellow-200: #E7D695;
+
+    --ac-blue-100: #4F24B1;
+
+    --ac-grey-100: #1F0505;
+    --ac-grey-200: #504B5B;
+
+    --ac-white-100: #FFF;
+}

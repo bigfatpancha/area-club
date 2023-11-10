@@ -1,0 +1,18 @@
+.ac-header {
+    height: 60px;
+    background-color: var(--ac-seconday);
+    color: var(--ac-primary);
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    
+    &--start {
+        padding: 18px
+    }
+
+    &--center {
+        font-size: 16px;
+        text-transform: uppercase;
+        text-align: left;
+        line-height: 60px;
+    }
+}
