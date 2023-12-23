@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "area-club-app:build:production"
+              "buildTarget": "area-club-app:build:production"
             },
             "development": {
-              "browserTarget": "area-club-app:build:development"
+              "buildTarget": "area-club-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "area-club-app:build"
+            "buildTarget": "area-club-app:build"
           }
         },
         "test": {
