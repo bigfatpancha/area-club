@@ -1,5 +1,7 @@
 <div class="ac-points-section">
-    <form [formGroup]="form">
+  <form [formGroup]="form">
+    <div class="ac-points-section__block">
+      <div class="ac-points-section__block-input">
         <mat-form-field class="ac-points-section__field">
           <mat-label>DNI</mat-label>
           <input matInput formControlName="document" placeholder="12345678">
@@ -7,21 +9,22 @@
             El número de documento es requerido
           </mat-error>
         </mat-form-field>
-
+  
         <mat-form-field class="ac-points-section__field">
-            <mat-label>Puntos</mat-label>
-            <input type="number" matInput formControlName="points">
-            <mat-error *ngIf="points?.hasError('required')">
-              Debés ingresar puntos para sumar
-            </mat-error>
-            <mat-error *ngIf="points?.hasError('min')">
-                Los puntos deben ser mayor a 0
-            </mat-error>
+          <mat-label>Puntos</mat-label>
+          <input type="number" matInput formControlName="points">
+          <mat-error *ngIf="points?.hasError('required')">
+            Debés ingresar puntos para sumar
+          </mat-error>
+          <mat-error *ngIf="points?.hasError('min')">
+              Los puntos deben ser mayor a 0
+          </mat-error>
         </mat-form-field>
-    
-        <button class="ac-points-section__button"
-          [disabled]="this.form.invalid" mat-flat-button color="primary" (click)="addPoints()">Sumar puntos</button>
-    </form>
-    
+      </div>
+  
+      <button class="ac-points-section__button"
+        [disabled]="this.form.invalid" mat-flat-button color="primary" (click)="addPoints()">Sumar puntos</button>
+    </div>
+  </form>
 </div>
 <div class="ac-new-client-section"></div>
